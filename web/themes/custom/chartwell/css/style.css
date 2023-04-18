@@ -1071,7 +1071,7 @@ label {
 
 #block-mainnavigation-2 {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-grow: 1;
   margin-left: 13rem;
 }
