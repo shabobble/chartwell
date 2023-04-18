@@ -1,0 +1,74 @@
+#block-chartwell-main-menu {
+
+    border-bottom: 2px solid rgba(0,0,0,.3);
+    padding: 2rem 0;
+    margin: 0 auto;
+
+    & .menu {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+    gap: 6rem;
+        
+    & li {
+
+        &.menu-item--collapsed {
+            list-style-type: none !important;
+            list-style-image: none !important;
+        }
+
+        a {
+        color: $color-primary;
+        text-decoration: none;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 50em) {
+        display: none;
+      }
+}
+
+#block-mainnavigation-2 {
+
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    margin-left: 13rem;
+
+    ul.menu {
+
+        display: flex;
+        justify-content: space-between;
+        gap: 6rem;
+
+        li {
+            display: inline;
+            // padding: 0 2.8rem;
+
+            a {
+                text-decoration: none;
+                color: $color-primary;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 50em) {
+        display: none;
+      }
+}
+
+#block-chartwell-account-menu,
+#block-useraccountmenucustom {
+    margin-left: -14rem;
+    display: flex;
+
+    ul.menu {
+        li {
+            a {
+                text-decoration: none;
+                color: $color-primary;
+            }
+        }
+    }
+}

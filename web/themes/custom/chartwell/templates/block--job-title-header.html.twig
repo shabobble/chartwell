@@ -1,0 +1,76 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+{# <div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {{ title }}
+  {% endblock %} #}
+  <div id="mainMenuBarAnchor"></div>
+  <div class="header--job-detail--alternative bg-variant-brand-secondary" id="mainMenuBar">
+    <div class="header__wrapper wrapper">
+      <div class="header__content header__content--full-width content-block">
+        <h1 class="content-block__title">
+          {{ title }}.
+        </h1>
+        <div class="content-block__split">
+          <ul class="content-block__list content-block__list--row content-block__split-text">
+            <li class="contact-details__link">
+              <svg class="icon--job icon--inline" aria-label="location of role">
+                <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-map-pin"></use>
+              </svg>
+              <span class="cards__meta-item--link">
+                {{ city }}, {{ state }} 
+              </span>
+            </li>
+            <li class="contact-details__link">
+              <svg class="icon--job icon--inline" aria-label="date job was posted">
+                <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-calendar"></use>
+              </svg>
+              <span>Posted {{ createdDate }}</span>
+            </li>
+          </ul>
+          <div class="button-group button-group--save-icon button-group--full-width button-group--reverse-on-l">
+            <a class="button button--full-width button--m button--filled job-apply__button" aria-disabled="false" href="{{ url }}chartwell">Apply</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

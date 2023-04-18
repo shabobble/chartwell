@@ -1,0 +1,30 @@
+#edit-candidate-profiles-wrapper input {
+    background: $color-grey-1;
+    box-shadow: 0px 0px 11px -7px rgba($color-black, 0.9) inset;
+    padding: 1.6rem;
+    border: solid 1px $color-white;
+    font-size: 1.8rem;
+
+    &[type='submit'] {
+        border-radius: 3px;
+        padding: 1rem 2rem;
+        font-size: 1.6rem;
+        line-height: 1.7em;
+        background: transparent none repeat scroll 0% 0%;
+        border: 2px solid $color-white;
+        transition: all 0.2s ease 0s;
+        position: relative;
+        background-color: #EFA600;
+        color: $color-white;
+    }
+}
+
+input,
+label {
+    display: block;
+}
+
+#edit-candidate-profiles-0-entity-field-phone-number-0-value {
+    width: 95%;
+}
+

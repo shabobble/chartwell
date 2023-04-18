@@ -1,0 +1,157 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+
+{% set path = path('<current>')|split('/')|last %}
+
+{% set industries = ['login', 'register', 'password', 'defense', 'healthcare', 'life-sciences', 'engineering', 'finance', 'information-technology', 'talent-solutions'] %}
+
+{# <div id="footer-content" class="clear-after">
+  <div class="footer-col">
+    {{ drupal_menu('job-seekers-footer-') }}
+  </div>
+  <div class="footer-col">
+    {{ drupal_menu('employers-foote') }}
+  </div>
+  <div class="footer-col">
+    {{ drupal_menu('industries-footer') }}
+  </div>
+  <div class="footer-col">
+    {{ drupal_menu('about-us-footer') }}
+  </div> #}
+  {# <div class="footer-col double">
+    <ul>
+      <li>Affiliations</li>
+    </ul>
+    {% if 'leadership' == path
+        or 'veteran-talent-network' == path
+        or 'node' == path and is_front == false
+        or path in industries
+        or 'blog' in path('<current>')|split('/') and path != 'blog'
+        or 'user' in path('<current>') %}
+      <div id="affiliate-logos-container">
+        <img src="../themes/custom/uspro/img/Affiliation Logos/aff-logo-1.png">
+        <img src="../themes/custom/uspro/img/Affiliation Logos/aff-logo-2.png">
+        <img src="../themes/custom/uspro/img/Affiliation Logos/aff-logo-3.png">
+        <img src="../themes/custom/uspro/img/Affiliation Logos/aff-logo-4.png">
+        <img src="../themes/custom/uspro/img/Affiliation Logos/aff-logo-5.png">
+        <img src="../themes/custom/uspro/img/Affiliation Logos/aff-logo-6.png">
+        <img src="../themes/custom/uspro/img/Affiliation Logos/women-owned-logo-14FC937869-seeklogo.com_.png">
+        <img src="../themes/custom/uspro/img/Affiliation Logos/FAA-certified-1.png">
+        <img src="../themes/custom/uspro/img/Affiliation Logos/original.png">
+      </div>
+    {% else %}
+      <div id="affiliate-logos-container">
+        <img src="themes/custom/uspro/img/Affiliation Logos/aff-logo-1.png">
+        <img src="themes/custom/uspro/img/Affiliation Logos/aff-logo-2.png">
+        <img src="themes/custom/uspro/img/Affiliation Logos/aff-logo-3.png">
+        <img src="themes/custom/uspro/img/Affiliation Logos/aff-logo-4.png">
+        <img src="themes/custom/uspro/img/Affiliation Logos/aff-logo-5.png">
+        <img src="themes/custom/uspro/img/Affiliation Logos/aff-logo-6.png">
+        <img src="themes/custom/uspro/img/Affiliation Logos/women-owned-logo-14FC937869-seeklogo.com_.png">
+        <img src="themes/custom/uspro/img/Affiliation Logos/FAA-certified-1.png">
+        <img src="themes/custom/uspro/img/Affiliation Logos/original.png">
+      </div>
+    {% endif %}
+  </div> #}
+{# </div> #}
+<div id="footer-information" class="clear-after">
+  <div class="footer-col">
+    <p>
+      <strong>
+        245 Centerville Road
+        <br>
+        Suite 2
+        <br>
+        Lancaster, PA 17603
+      </strong>
+    </p>
+  </div>
+  <div class="footer-col double">
+    <p>
+      <span>
+        <i class="fa fa-map-marker"></i>
+      </span>
+      <a href="https://www.bing.com/maps?where=245+Centerville+Road+Suite+2+Lancaster+17603+Pennnsylvania+US&trk=org-locations_url&cp=40.048267%7E-76.392399&lvl=16.8"
+         target="_blank"
+         rel="noopener">Directions
+      </a>
+      <br>
+      <span>
+        <i class="fa fa-envelope"></i>
+      </span>
+      <a href="mailto:info@chartwellstaff.com">Email Chartwell</a>
+      <br>
+      <span>
+        <i class="fa fa-phone"></i>
+      </span>
+      844.STAFF.01 (844.782.3301)
+    </p>
+  </div>
+  <div class="footer-col double">
+    <ul id="footer-social-links">
+      <li>
+        <a href="https://twitter.com/chartwellstaff" target="_blank" rel="noopener">
+          <svg class="icon icon-small">
+            <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-twitter"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/chartwellstaffingofficial" target="_blank" rel="noopener">
+          <svg class="icon icon-small">
+            <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/company/chartwell-staffing-solutions/" target="_blank" rel="noopener">
+          <svg class="icon icon-small">
+            <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-linkedin"></use>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/chartwellstaffing/" target="_blank" rel="noopener">
+          <svg class="icon icon-small">
+            <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-instagram"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="footer-notice">
+  <p><strong>© Chartwell Staffing Solutions © 2023 | All Rights Reserved</strong></p>
+</div>

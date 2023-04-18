@@ -1,0 +1,23 @@
+global-styling:
+  version: 1.0
+  css:
+    theme:
+      '//fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap': { type: external }
+      css/style.css: {}
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/jquery
+
+slick:
+  version: 1.0
+  css:
+    theme:
+      '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css': { type: external }
+  js:
+    '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js': { type: external }
+    js/slick.js: {}
+  dependencies:
+    - core/jquery
+
+

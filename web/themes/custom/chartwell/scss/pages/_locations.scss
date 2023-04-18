@@ -1,0 +1,26 @@
+.locations {
+
+    &__contact-info {
+        border-top-width: 1.5px;
+        border-bottom-width: 1.5px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+        border-image: linear-gradient(to left, $color-primary-light, $color-primary, $color-primary-light) 1;
+        padding: 1rem 0;
+        margin: 2rem 0;
+        
+        span {
+            font-weight: 700;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 3rem;
+    }
+}

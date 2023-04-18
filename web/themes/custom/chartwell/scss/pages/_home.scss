@@ -1,0 +1,78 @@
+.intro {
+    display: grid;
+    grid-template-columns: calc(100%/2) calc(100%/3);
+    padding-top: 8rem;
+    justify-content: space-between;
+
+    @include respond(phone) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // &__text {
+    //     display: grid;
+    // }
+
+    &__icons {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        &--item {
+            display: grid;
+            grid-template-columns: min-content 1fr;
+            margin-bottom: 4rem;
+
+            & svg {
+                width: 5rem;
+                height: 6rem;
+                fill: $color-orange; //$color-primary
+                margin-right: 5rem;
+            }
+
+             & div {
+                & p {
+                    margin: 1.4rem 0;
+                    font-size: 1.4rem;
+                }
+             }
+        }
+    }
+}
+
+.icon {
+    display: block;
+    position: relative;
+    width: 5rem;
+    height: 6rem;
+    fill: $color-orange;
+
+    &-large {
+        height: 12rem;
+        width: 12rem;
+    }
+
+    &-small {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    &-1 {
+        background-image: url(../img/quotes.png);
+        align-self: start;
+    }
+
+    &-quotes {
+        fill: $color-orange-dark;
+    }
+}
+
+// #testimonials-slider {
+//     width: 1880px;
+//     height: 669px;
+//     background: url(../img/90480.jpg);
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     background-position: bottom;
+// }
