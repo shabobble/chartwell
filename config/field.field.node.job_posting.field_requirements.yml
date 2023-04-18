@@ -1,0 +1,19 @@
+uuid: 24c6c503-c274-43bd-85a1-a17d7ff26b4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_requirements
+    - node.type.job_posting
+id: node.job_posting.field_requirements
+field_name: field_requirements
+entity_type: node
+bundle: job_posting
+label: Requirements
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

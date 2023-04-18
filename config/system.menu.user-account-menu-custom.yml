@@ -1,0 +1,8 @@
+uuid: d17b9374-8a30-4ac7-97c4-5d747b422d5e
+langcode: en
+status: true
+dependencies: {  }
+id: user-account-menu-custom
+label: 'User Account Menu (Custom)'
+description: 'User account menu not locked by User module'
+locked: false

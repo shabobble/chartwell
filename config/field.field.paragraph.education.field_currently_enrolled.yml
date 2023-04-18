@@ -1,0 +1,23 @@
+uuid: 1074b13f-e6b9-4af3-b7d8-53b06b10eb23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_currently_enrolled
+    - paragraphs.paragraphs_type.education
+id: paragraph.education.field_currently_enrolled
+field_name: field_currently_enrolled
+entity_type: paragraph
+bundle: education
+label: 'I am currently studying here'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,8 @@
+uuid: 2a988b01-8f93-45a6-869a-57a3e869df79
+langcode: en
+status: true
+dependencies: {  }
+id: northern-california-locations
+label: 'Southern California Locations'
+description: ''
+locked: false

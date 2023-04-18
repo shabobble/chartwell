@@ -1,0 +1,21 @@
+uuid: 8d0622e0-1fbf-4ab9-bbbe-fcf0fdf1e7c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_end_date
+    - paragraphs.paragraphs_type.experience
+  module:
+    - datetime
+id: paragraph.experience.field_end_date
+field_name: field_end_date
+entity_type: paragraph
+bundle: experience
+label: 'End Date'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,25 @@
+uuid: 38d984c3-1f4d-47d5-aeb9-ad0d2a92edd2
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:3380b6d4-b7c0-487a-b1ad-ceb122ad5bfa'
+  module:
+    - block_content
+  theme:
+    - chartwell
+id: break
+theme: chartwell
+region: header
+weight: -4
+provider: null
+plugin: 'block_content:3380b6d4-b7c0-487a-b1ad-ceb122ad5bfa'
+settings:
+  id: 'block_content:3380b6d4-b7c0-487a-b1ad-ceb122ad5bfa'
+  label: Break
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

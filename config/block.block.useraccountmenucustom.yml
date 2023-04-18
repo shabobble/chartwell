@@ -1,0 +1,35 @@
+uuid: b6c51de9-c4dd-4b98-b5b1-4b58f5da2d39
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.user-account-menu-custom
+  module:
+    - system
+    - user
+  theme:
+    - chartwell
+id: useraccountmenucustom
+theme: chartwell
+region: header
+weight: -7
+provider: null
+plugin: 'system_menu_block:user-account-menu-custom'
+settings:
+  id: 'system_menu_block:user-account-menu-custom'
+  label: 'User Account Menu (Custom)'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator

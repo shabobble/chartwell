@@ -1,0 +1,22 @@
+uuid: e822d8d5-d7f0-4ff4-ad0a-f5dac6d513d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: jobs
+label: Jobs
+type: 'canonical_entities:node'
+pattern: '/jobs/[node:field_reference_number]'
+selection_criteria:
+  ee80e928-aa12-4c98-8f50-1fb1d2c9189c:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: ee80e928-aa12-4c98-8f50-1fb1d2c9189c
+    context_mapping:
+      node: node
+    bundles:
+      job_posting: job_posting
+selection_logic: and
+weight: -5
+relationships: {  }

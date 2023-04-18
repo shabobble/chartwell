@@ -1,0 +1,19 @@
+uuid: 5a6b8453-77a6-4d27-afa3-d91d3abbeb4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_first_name
+    - profile.type.candidate
+id: profile.candidate.field_first_name
+field_name: field_first_name
+entity_type: profile
+bundle: candidate
+label: 'First Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

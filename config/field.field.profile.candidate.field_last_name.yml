@@ -1,0 +1,19 @@
+uuid: 6b5d24c6-98d5-4ce4-b68c-26ffc2e31ba9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_last_name
+    - profile.type.candidate
+id: profile.candidate.field_last_name
+field_name: field_last_name
+entity_type: profile
+bundle: candidate
+label: 'Last Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

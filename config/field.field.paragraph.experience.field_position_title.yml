@@ -1,0 +1,19 @@
+uuid: d9c266a0-76d5-439a-aac8-c61e702a8602
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_position_title
+    - paragraphs.paragraphs_type.experience
+id: paragraph.experience.field_position_title
+field_name: field_position_title
+entity_type: paragraph
+bundle: experience
+label: 'Position Title'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

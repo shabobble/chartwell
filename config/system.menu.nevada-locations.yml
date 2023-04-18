@@ -1,0 +1,8 @@
+uuid: 06fcf6a4-e1c8-4830-8050-9c77b979ae91
+langcode: en
+status: true
+dependencies: {  }
+id: nevada-locations
+label: 'Nevada Locations'
+description: ''
+locked: false

@@ -1,0 +1,10 @@
+uuid: 80b3a7a7-2593-4868-93de-e73c4bf7a8ff
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.recent_jobs
+label: 'Recent Jobs'
+targetEntityType: node
+cache: true

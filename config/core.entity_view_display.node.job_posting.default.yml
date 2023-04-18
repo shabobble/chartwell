@@ -1,0 +1,150 @@
+uuid: a89581b3-c208-49e8-9b41-91dfe29d10b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.job_posting.feeds_item
+    - field.field.node.job_posting.field_city
+    - field.field.node.job_posting.field_company
+    - field.field.node.job_posting.field_country
+    - field.field.node.job_posting.field_job_description
+    - field.field.node.job_posting.field_job_type
+    - field.field.node.job_posting.field_postal_code
+    - field.field.node.job_posting.field_reference_number
+    - field.field.node.job_posting.field_rep_email
+    - field.field.node.job_posting.field_rep_first_name
+    - field.field.node.job_posting.field_rep_last_name
+    - field.field.node.job_posting.field_requirements
+    - field.field.node.job_posting.field_salary
+    - field.field.node.job_posting.field_state_code
+    - field.field.node.job_posting.field_url
+    - node.type.job_posting
+  module:
+    - link
+    - text
+    - user
+id: node.job_posting.default
+targetEntityType: node
+bundle: job_posting
+mode: default
+content:
+  field_city:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_company:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_country:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_job_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_job_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_postal_code:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_reference_number:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_rep_email:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_rep_first_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_rep_last_name:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_requirements:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_salary:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_state_code:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_url:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true

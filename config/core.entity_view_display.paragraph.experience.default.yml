@@ -1,0 +1,71 @@
+uuid: 3a8b7d5e-93aa-4f46-92ab-d358c5c16f4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.experience.field_company
+    - field.field.paragraph.experience.field_currently_employed
+    - field.field.paragraph.experience.field_end_date
+    - field.field.paragraph.experience.field_job_description
+    - field.field.paragraph.experience.field_position_title
+    - field.field.paragraph.experience.field_start_date
+    - paragraphs.paragraphs_type.experience
+  module:
+    - datetime
+id: paragraph.experience.default
+targetEntityType: paragraph
+bundle: experience
+mode: default
+content:
+  field_company:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_currently_employed:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_end_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_job_description:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_position_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_start_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

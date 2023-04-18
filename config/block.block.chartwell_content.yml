@@ -1,0 +1,22 @@
+uuid: 79960674-791f-487f-919d-e8ad8478b8ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - chartwell
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: chartwell_content
+theme: chartwell
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

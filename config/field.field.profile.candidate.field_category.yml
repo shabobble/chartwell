@@ -1,0 +1,23 @@
+uuid: c01116a3-d46b-42bf-90fd-bec994381d19
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_category
+    - profile.type.candidate
+  module:
+    - options
+id: profile.candidate.field_category
+field_name: field_category
+entity_type: profile
+bundle: candidate
+label: Category
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,8 @@
+uuid: 64934002-455a-41c6-b477-9bb23bb4ad7c
+langcode: en
+status: true
+dependencies: {  }
+name: 'Job Type'
+vid: job_type
+description: Permanent/Temporary
+weight: 0

@@ -1,0 +1,19 @@
+uuid: 0e51f137-6dfe-46ab-8698-d78d96f487a5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_city
+    - profile.type.candidate
+id: profile.candidate.field_city
+field_name: field_city
+entity_type: profile
+bundle: candidate
+label: City
+description: 'For example: "Chicago", "London", "Anywhere" or "Telecommute".'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

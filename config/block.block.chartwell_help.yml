@@ -1,0 +1,22 @@
+uuid: cd15f89d-c15e-426b-8c42-b27619e3882f
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - chartwell
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: chartwell_help
+theme: chartwell
+region: sidebar_first
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

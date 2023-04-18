@@ -1,0 +1,23 @@
+uuid: 2f219f5a-f930-4983-a426-9ed5f22d25dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_currently_employed
+    - paragraphs.paragraphs_type.experience
+id: paragraph.experience.field_currently_employed
+field_name: field_currently_employed
+entity_type: paragraph
+bundle: experience
+label: 'This is my current position'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

@@ -1,0 +1,8 @@
+uuid: 4f610f1a-9202-4d89-87b2-8d83dc60d9b0
+langcode: en
+status: true
+dependencies: {  }
+id: northern-california-locations-1
+label: 'Northern California Locations'
+description: ''
+locked: false

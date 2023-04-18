@@ -1,0 +1,65 @@
+uuid: 9fcaf3f9-cad0-4fc0-ab52-4a8cc3028d9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.experience.field_company
+    - field.field.paragraph.experience.field_currently_employed
+    - field.field.paragraph.experience.field_end_date
+    - field.field.paragraph.experience.field_job_description
+    - field.field.paragraph.experience.field_position_title
+    - field.field.paragraph.experience.field_start_date
+    - paragraphs.paragraphs_type.experience
+  module:
+    - datetime
+id: paragraph.experience.default
+targetEntityType: paragraph
+bundle: experience
+mode: default
+content:
+  field_company:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_currently_employed:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_end_date:
+    type: datetime_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_job_description:
+    type: string_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_position_title:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_start_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

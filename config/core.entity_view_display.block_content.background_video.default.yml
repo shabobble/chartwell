@@ -1,0 +1,22 @@
+uuid: b1117b19-5e33-4667-96d0-fb23d349f312
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.background_video
+    - field.field.block_content.background_video.field_video
+id: block_content.background_video.default
+targetEntityType: block_content
+bundle: background_video
+mode: default
+content:
+  field_video:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

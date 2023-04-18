@@ -1,0 +1,22 @@
+uuid: b8522548-5c11-42c1-b6fe-29b54cf19103
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.media_library
+    - field.field.media.document.field_media_document
+    - media.type.document
+_core:
+  default_config_hash: dcpfpqyLXOSGpulacMAJW3H-G34_LeNsjdfxd1_oCfY
+id: media.document.media_library
+targetEntityType: media
+bundle: document
+mode: media_library
+content: {  }
+hidden:
+  created: true
+  field_media_document: true
+  name: true
+  path: true
+  status: true
+  uid: true

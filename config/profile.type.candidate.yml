@@ -1,0 +1,13 @@
+uuid: 6aec2a7c-cced-4f64-9e92-ae260e70db81
+langcode: en
+status: true
+dependencies: {  }
+id: candidate
+label: Candidate
+display_label: Candidate
+multiple: false
+registration: true
+roles:
+  authenticated: authenticated
+allow_revisions: true
+new_revision: true

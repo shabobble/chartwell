@@ -1,0 +1,18 @@
+uuid: 432b6982-8602-4152-896f-e0c18a7c56a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_currently_employed
+field_name: field_currently_employed
+entity_type: paragraph
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

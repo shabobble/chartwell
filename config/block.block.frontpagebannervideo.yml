@@ -1,0 +1,30 @@
+uuid: e0ec0d30-713f-4393-b564-a54ed0f4a015
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:background_video:cb65d602-7c50-43c4-900b-fac5826601db'
+  module:
+    - block_content
+    - system
+  theme:
+    - chartwell
+id: frontpagebannervideo
+theme: chartwell
+region: header
+weight: -5
+provider: null
+plugin: 'block_content:cb65d602-7c50-43c4-900b-fac5826601db'
+settings:
+  id: 'block_content:cb65d602-7c50-43c4-900b-fac5826601db'
+  label: 'Front Page Banner Video'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -1,0 +1,21 @@
+uuid: efcac501-1f87-4207-9ff8-376e474bf89a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_profile_summary
+    - profile.type.candidate
+  module:
+    - text
+id: profile.candidate.field_profile_summary
+field_name: field_profile_summary
+entity_type: profile
+bundle: candidate
+label: 'Profile Summary'
+description: 'Use this field to list your skills, specialties, experience or goals'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

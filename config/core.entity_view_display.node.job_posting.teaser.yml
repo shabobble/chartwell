@@ -1,0 +1,85 @@
+uuid: e8d41151-b5c1-4285-97ab-0f2a98d5e0fc
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.job_posting.feeds_item
+    - field.field.node.job_posting.field_city
+    - field.field.node.job_posting.field_company
+    - field.field.node.job_posting.field_country
+    - field.field.node.job_posting.field_job_description
+    - field.field.node.job_posting.field_job_type
+    - field.field.node.job_posting.field_postal_code
+    - field.field.node.job_posting.field_reference_number
+    - field.field.node.job_posting.field_rep_email
+    - field.field.node.job_posting.field_rep_first_name
+    - field.field.node.job_posting.field_rep_last_name
+    - field.field.node.job_posting.field_requirements
+    - field.field.node.job_posting.field_salary
+    - field.field.node.job_posting.field_state_code
+    - field.field.node.job_posting.field_url
+    - node.type.job_posting
+  module:
+    - text
+    - user
+id: node.job_posting.teaser
+targetEntityType: node
+bundle: job_posting
+mode: teaser
+content:
+  field_city:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_job_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_job_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_salary:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_state_code:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  feeds_item: true
+  field_company: true
+  field_country: true
+  field_postal_code: true
+  field_reference_number: true
+  field_rep_email: true
+  field_rep_first_name: true
+  field_rep_last_name: true
+  field_requirements: true
+  field_url: true

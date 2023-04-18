@@ -1,0 +1,19 @@
+uuid: 746cd669-df7b-46ec-aa0d-3c23acaf0bc5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_company
+    - node.type.job_posting
+id: node.job_posting.field_company
+field_name: field_company
+entity_type: node
+bundle: job_posting
+label: Company
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

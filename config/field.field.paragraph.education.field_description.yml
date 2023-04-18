@@ -1,0 +1,19 @@
+uuid: 2b15d48b-1399-48c8-ae59-02b424fab231
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.education
+id: paragraph.education.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: education
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

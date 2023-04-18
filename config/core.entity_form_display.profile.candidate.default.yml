@@ -1,0 +1,208 @@
+uuid: 17ab3cfd-1fa6-486c-ae4f-f501b1f49d39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.profile.candidate.field_category
+    - field.field.profile.candidate.field_city
+    - field.field.profile.candidate.field_country
+    - field.field.profile.candidate.field_education
+    - field.field.profile.candidate.field_experience
+    - field.field.profile.candidate.field_first_name
+    - field.field.profile.candidate.field_last_name
+    - field.field.profile.candidate.field_phone_number
+    - field.field.profile.candidate.field_professional_headline
+    - field.field.profile.candidate.field_profile_summary
+    - field.field.profile.candidate.field_state
+    - field.field.profile.candidate.field_website
+    - field.field.profile.candidate.field_zip_code
+    - profile.type.candidate
+  module:
+    - address
+    - field_group
+    - link
+    - paragraphs
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_account_information:
+      children:
+        - field_first_name
+        - field_last_name
+        - field_phone_number
+        - field_website
+      label: 'Account Information'
+      region: content
+      parent_name: ''
+      weight: 0
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        description: ''
+        required_fields: false
+    group_address:
+      children:
+        - field_country
+        - field_state
+        - field_zip_code
+        - field_city
+      label: Address
+      region: content
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        description: ''
+        required_fields: false
+    group_resume:
+      children:
+        - field_category
+        - field_professional_headline
+        - field_profile_summary
+        - field_experience
+        - field_education
+      label: Resume
+      region: content
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: true
+        id: ''
+        description: ''
+        required_fields: false
+id: profile.candidate.default
+targetEntityType: profile
+bundle: candidate
+mode: default
+content:
+  field_category:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_city:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_country:
+    type: address_country_default
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_education:
+    type: paragraphs
+    weight: 7
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_experience:
+    type: paragraphs
+    weight: 6
+    region: content
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        add_above: '0'
+        collapse_edit_all: collapse_edit_all
+        duplicate: duplicate
+    third_party_settings: {  }
+  field_first_name:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_last_name:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_phone_number:
+    type: telephone_default
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_professional_headline:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_profile_summary:
+    type: text_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_state:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_website:
+    type: link_default
+    weight: 6
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_zip_code:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  is_default: true

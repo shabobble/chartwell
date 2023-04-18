@@ -1,0 +1,19 @@
+uuid: 88de4003-583e-4c08-8615-c2641a5def6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_country
+    - node.type.job_posting
+id: node.job_posting.field_country
+field_name: field_country
+entity_type: node
+bundle: job_posting
+label: Country
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,25 @@
+uuid: 85e7a276-ea34-48a1-8022-67063ac93c9a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_phone_number
+    - profile.type.candidate
+  module:
+    - profile
+    - telephone
+third_party_settings:
+  profile:
+    profile_private: true
+id: profile.candidate.field_phone_number
+field_name: field_phone_number
+entity_type: profile
+bundle: candidate
+label: 'Phone Number'
+description: 'This field will be shown only to registered employers.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

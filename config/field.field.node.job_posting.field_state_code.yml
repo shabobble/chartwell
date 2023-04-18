@@ -1,0 +1,29 @@
+uuid: 835ce18a-3cfd-4d64-80aa-09880afba09a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_state_code
+    - node.type.job_posting
+    - taxonomy.vocabulary.us_states
+id: node.job_posting.field_state_code
+field_name: field_state_code
+entity_type: node
+bundle: job_posting
+label: State
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      us_states: us_states
+    sort:
+      field: name
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

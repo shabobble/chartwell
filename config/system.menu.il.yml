@@ -1,0 +1,8 @@
+uuid: 4a3fab85-fb4a-46e9-a882-0b641c77cddb
+langcode: en
+status: true
+dependencies: {  }
+id: il
+label: 'Illinois Locations'
+description: ''
+locked: false

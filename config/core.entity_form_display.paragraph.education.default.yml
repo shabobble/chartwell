@@ -1,0 +1,65 @@
+uuid: 30fb2650-0afa-4956-a7fc-65df4944da67
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.education.field_currently_enrolled
+    - field.field.paragraph.education.field_degree
+    - field.field.paragraph.education.field_description
+    - field.field.paragraph.education.field_end_date
+    - field.field.paragraph.education.field_institution
+    - field.field.paragraph.education.field_start_date
+    - paragraphs.paragraphs_type.education
+  module:
+    - datetime
+id: paragraph.education.default
+targetEntityType: paragraph
+bundle: education
+mode: default
+content:
+  field_currently_enrolled:
+    type: boolean_checkbox
+    weight: 2
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_degree:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_description:
+    type: string_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_end_date:
+    type: datetime_default
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_institution:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_start_date:
+    type: datetime_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

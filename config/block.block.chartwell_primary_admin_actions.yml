@@ -1,0 +1,20 @@
+uuid: 63abd237-798d-41c2-b07f-bc8d3a6033a3
+langcode: en
+status: true
+dependencies:
+  theme:
+    - chartwell
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: chartwell_primary_admin_actions
+theme: chartwell
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

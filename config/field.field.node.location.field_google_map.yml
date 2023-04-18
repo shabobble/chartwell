@@ -1,0 +1,21 @@
+uuid: 75412f5d-d519-4fd9-bcca-c90c0c69fdeb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_google_map
+    - node.type.location
+  module:
+    - computed_field
+id: node.location.field_google_map
+field_name: field_google_map
+entity_type: node
+bundle: location
+label: 'Google Map'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: computed_string

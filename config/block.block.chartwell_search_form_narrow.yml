@@ -1,0 +1,23 @@
+uuid: 3a9e2ce1-a08b-4863-9674-fd61717e36fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - chartwell
+_core:
+  default_config_hash: yEBET0cqDbk8dkWzaJw-8CKft0961VBflsISoSR6Lj8
+id: chartwell_search_form_narrow
+theme: chartwell
+region: primary_menu
+weight: -7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (narrow)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

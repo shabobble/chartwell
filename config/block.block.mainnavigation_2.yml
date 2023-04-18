@@ -1,0 +1,25 @@
+uuid: 82715bb2-0efb-42ef-abb5-0cdec6de4a13
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - chartwell
+id: mainnavigation_2
+theme: chartwell
+region: header
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation submenu'
+  label_display: '0'
+  provider: system
+  level: 2
+  depth: 0
+  expand_all_items: false
+visibility: {  }

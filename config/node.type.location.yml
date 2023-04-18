@@ -1,0 +1,18 @@
+uuid: 82c8cb77-78c7-4950-a9e5-7c99fd642303
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Location
+type: location
+description: 'Add a new staffing agency location'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

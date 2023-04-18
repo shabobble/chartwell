@@ -1,0 +1,24 @@
+uuid: 8fc5036e-3228-487d-9647-16199359fd80
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_country
+    - profile.type.candidate
+  module:
+    - address
+id: profile.candidate.field_country
+field_name: field_country
+entity_type: profile
+bundle: candidate
+label: Country
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: US
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country

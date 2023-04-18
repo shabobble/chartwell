@@ -1,0 +1,22 @@
+uuid: fcd1a02f-fe65-483c-ba4d-7c19bb3c6cc5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: locations
+label: Locations
+type: 'canonical_entities:node'
+pattern: '/locations/[node:field_state_code]/[node:field_city]-staffing-agency'
+selection_criteria:
+  643be36a-09d7-4474-a9a4-bc7c9d89acae:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 643be36a-09d7-4474-a9a4-bc7c9d89acae
+    context_mapping:
+      node: node
+    bundles:
+      location: location
+selection_logic: and
+weight: -5
+relationships: {  }

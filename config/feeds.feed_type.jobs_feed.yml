@@ -1,0 +1,269 @@
+uuid: b8dec862-a2a1-487d-9af5-c149c1d3740f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.job_posting.field_city
+    - field.field.node.job_posting.field_company
+    - field.field.node.job_posting.field_country
+    - field.field.node.job_posting.field_job_description
+    - field.field.node.job_posting.field_job_type
+    - field.field.node.job_posting.field_postal_code
+    - field.field.node.job_posting.field_reference_number
+    - field.field.node.job_posting.field_rep_email
+    - field.field.node.job_posting.field_rep_first_name
+    - field.field.node.job_posting.field_rep_last_name
+    - field.field.node.job_posting.field_requirements
+    - field.field.node.job_posting.field_salary
+    - field.field.node.job_posting.field_state_code
+    - field.field.node.job_posting.field_url
+    - node.type.job_posting
+  module:
+    - feeds_ex
+    - feeds_tamper
+    - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      5f2ab4cb-4cb0-435b-a5a1-caca2f1de1bc:
+        find: '/\s\Style."(.*?)"/'
+        replace: ''
+        limit: null
+        uuid: 5f2ab4cb-4cb0-435b-a5a1-caca2f1de1bc
+        plugin: find_replace_regex
+        source: description
+        weight: -10
+        label: 'Find replace REGEX'
+label: 'Jobs Feed'
+id: jobs_feed
+description: ''
+help: ''
+import_period: 3600
+fetcher: http
+fetcher_configuration:
+  auto_detect_feeds: false
+  use_pubsubhubbub: false
+  always_download: false
+  fallback_hub: ''
+  request_timeout: 30
+parser: jsonpath
+parser_configuration:
+  context:
+    value: '$.Jobs.*'
+  source_encoding:
+    - auto
+  display_errors: false
+  line_limit: 100
+processor: 'entity:node'
+processor_configuration:
+  values:
+    type: job_posting
+  langcode: en
+  insert_new: 1
+  update_existing: 1
+  update_non_existent: _delete
+  skip_hash_check: false
+  authorize: true
+  revision: false
+  expire: -1
+  owner_feed_author: false
+  owner_id: 1
+custom_sources:
+  title:
+    value: title
+    label: title
+    machine_name: title
+    type: json
+  url:
+    value: url
+    label: url
+    machine_name: url
+    type: json
+  country:
+    value: country
+    label: country
+    machine_name: country
+    type: json
+  description:
+    value: description
+    label: description
+    machine_name: description
+    type: json
+  repemail:
+    value: repemail
+    label: repemail
+    machine_name: repemail
+    type: json
+  city:
+    value: city
+    label: city
+    machine_name: city
+    type: json
+  state:
+    value: state
+    label: state
+    machine_name: state
+    type: json
+  company:
+    value: company
+    label: company
+    machine_name: company
+    type: json
+  jobtype:
+    value: jobtype
+    label: jobtype
+    machine_name: jobtype
+    type: json
+  postalcode:
+    value: postalcode
+    label: postalcode
+    machine_name: postalcode
+    type: json
+  referencenumber:
+    value: referencenumber
+    label: referencenumber
+    machine_name: referencenumber
+    type: json
+  repfirstname:
+    value: repfirstname
+    label: repfirstname
+    machine_name: repfirstname
+    type: json
+  replastname:
+    value: replastname
+    label: replastname
+    machine_name: replastname
+    type: json
+  requirements:
+    value: requirements
+    label: requirements
+    machine_name: requirements
+    type: json
+  salary:
+    value: salary
+    label: salary
+    machine_name: salary
+    type: json
+  jobdescription:
+    value: jobdescription
+    label: jobdescription
+    machine_name: jobdescription
+    type: json
+  state_code:
+    value: state
+    label: state
+    machine_name: state_code
+    type: json
+  feed_state:
+    value: state
+    label: state
+    machine_name: feed_state
+    type: json
+mappings:
+  -
+    target: title
+    map:
+      value: title
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_url
+    map:
+      uri: url
+      title: ''
+    settings:
+      language: null
+  -
+    target: field_country
+    map:
+      value: country
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_rep_email
+    map:
+      value: repemail
+    settings:
+      language: null
+      defuse: false
+    unique: {  }
+  -
+    target: field_city
+    map:
+      value: city
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_company
+    map:
+      value: company
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_job_type
+    map:
+      target_id: jobtype
+    settings:
+      language: null
+      reference_by: name
+      autocreate: false
+  -
+    target: field_postal_code
+    map:
+      value: postalcode
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_reference_number
+    map:
+      value: referencenumber
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_rep_first_name
+    map:
+      value: repfirstname
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_rep_last_name
+    map:
+      value: replastname
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_requirements
+    map:
+      value: requirements
+    settings:
+      language: null
+  -
+    target: field_salary
+    map:
+      value: salary
+    settings:
+      language: null
+    unique: {  }
+  -
+    target: field_job_description
+    map:
+      value: description
+    settings:
+      language: ''
+      format: full_html
+  -
+    target: field_state_code
+    map:
+      target_id: feed_state
+    settings:
+      language: ''
+      reference_by: name
+      autocreate: '1'

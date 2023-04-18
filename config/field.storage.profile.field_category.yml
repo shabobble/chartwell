@@ -1,0 +1,99 @@
+uuid: 2176a441-3b43-494c-a101-b79073ee5179
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - profile
+id: profile.field_category
+field_name: field_category
+entity_type: profile
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'Accounting / Finance'
+    -
+      value: '2'
+      label: 'Administrative / Clerical / Office'
+    -
+      value: '3'
+      label: 'Compliance Clerks'
+    -
+      value: '4'
+      label: 'Customer Service / Call Center'
+    -
+      value: '5'
+      label: 'Document Specialists'
+    -
+      value: '6'
+      label: 'Forklift Operators & Pallet Jack Operators'
+    -
+      value: '7'
+      label: 'General Labor & Warehouse'
+    -
+      value: '8'
+      label: Healthcare
+    -
+      value: '9'
+      label: Hospitality
+    -
+      value: '10'
+      label: 'Human Resources'
+    -
+      value: '11'
+      label: Industrial
+    -
+      value: '12'
+      label: Insurance
+    -
+      value: '13'
+      label: 'Internal Positions'
+    -
+      value: '14'
+      label: IT
+    -
+      value: '15'
+      label: 'Machine Operators'
+    -
+      value: '16'
+      label: 'Manufacturing / Production'
+    -
+      value: '17'
+      label: 'Nursing Positions'
+    -
+      value: '18'
+      label: 'Other Skilled Trade'
+    -
+      value: '19'
+      label: 'Payroll Analysts'
+    -
+      value: '20'
+      label: Professional
+    -
+      value: '21'
+      label: 'Project Managers'
+    -
+      value: '22'
+      label: 'Quality Assurance / Quality Control'
+    -
+      value: '23'
+      label: Sales
+    -
+      value: '24'
+      label: 'Shipping / Receiving'
+    -
+      value: '25'
+      label: 'Strategy Consultants'
+    -
+      value: '26'
+      label: 'Supply Chain Managers'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
