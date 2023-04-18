@@ -831,9 +831,9 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
   'driver' => 'mysql',
 );
 
-} else if ($_SERVER['SERVER_NAME'] === 'uspro.qa.peddigital.com') {
+} else if ($_SERVER['SERVER_NAME'] === 'chartwell.qa.peddigital.com') {
   $databases['default']['default'] = array (
-  'database' => 'usproqa',
+  'database' => 'chartwellqa',
   'username' => 'pksullivan',
   'password' => 'gShJ*6Gn5!',
   'prefix' => '',
