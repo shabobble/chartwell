@@ -1,0 +1,35 @@
+<?php
+
+// use Drupal\Core\Form\FormStateInterface;
+
+function computed_field_field_google_map_compute($entity_type_manager, $entity, $fields, $delta) {
+    $address = "Chartwell Staffing, ".$entity->field_street_address->value.", ".$entity->field_city->value.", ".$entity->field_state_code->value." ".$entity->field_postal_code->value;
+
+    return $address;
+}
+
+// /**
+//  * Implements hook_theme().
+//  */
+
+// function custommap_theme($existing, $type, $theme, $path) {
+//     return [
+//         'views_exposed_form__all_jobs__page_1' => [
+//             'render element' => 'form,',
+//         ],
+//     ];
+// }
+
+// /**
+//  * Implements hook_form_FORM_ID_alter().
+//  */
+
+//  function custommap_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+//     if ($form['#id'] == 'views-exposed-form-all-jobs-page-1') {
+//         // Optional, in case, if you want to remove the title and use own placeholder.
+//         if (isset($form['keywords']) && $form['keywords']['#type'] == 'textfield') {
+//             $form['keywords']['#attributes']['placeholder'] == t('My custom placeholder');
+//             unset($form['keywords']['#title']);
+//         }
+//     }
+//  }
