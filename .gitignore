@@ -141,3 +141,5 @@ node_modules/*
 github-deployed
 github-deployed.pub
 /private/webform
+.vs/*
+web/themes/custom/chartwell/scss
