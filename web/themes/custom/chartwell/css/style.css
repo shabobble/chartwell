@@ -98,7 +98,7 @@ section .container {
 }
 
 .gradient-overlay {
-  background-image: url(../img/background.png);
+  background-image: url(../img/background.webp);
 }
 .gradient-overlay:after {
   content: "";
