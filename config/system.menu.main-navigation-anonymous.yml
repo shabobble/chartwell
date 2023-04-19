@@ -1,8 +1,0 @@
-uuid: c47300b3-106c-486c-a70a-c917b1c6d7e3
-langcode: en
-status: true
-dependencies: {  }
-id: main-navigation-anonymous
-label: 'Main Navigation (Anonymous)'
-description: ''
-locked: false
