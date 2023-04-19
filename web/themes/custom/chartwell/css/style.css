@@ -418,6 +418,21 @@ a.button--full-width {
   transform: translateY(5px);
 }
 
+#block-chartwell-main-menu .menu li:last-child a {
+  padding: 0.5rem 2rem;
+  min-width: auto;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #374760;
+  color: #374760;
+  transition: all 0.2s 0s ease;
+  text-transform: uppercase;
+}
+#block-chartwell-main-menu .menu li:last-child a:hover {
+  background: #374760;
+  color: #ffffff;
+}
+
 .footer {
   padding-top: 6rem;
   border-top: 6px solid #efa600;
