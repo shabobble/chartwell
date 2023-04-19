@@ -426,6 +426,7 @@ a.button--full-width {
   border-color: #374760;
   color: #374760;
   transition: all 0.2s 0s ease;
+  text-transform: uppercase;
 }
 #block-chartwell-main-menu .menu li:last-child a:hover {
   background: #374760;
