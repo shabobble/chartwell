@@ -233,6 +233,11 @@ h1 {
   z-index: 1;
   width: 100%;
 }
+@media (max-width: 37.5em) {
+  .sticky {
+    height: 26vh;
+  }
+}
 
 .bucket-link {
   display: flex;
@@ -300,6 +305,11 @@ h1 {
 }
 .content-block__split .button-group--full-width {
   display: flex;
+}
+@media (max-width: 37.5em) {
+  .content-block__split .button-group--full-width {
+    justify-content: center;
+  }
 }
 .content-block__split .button-group--reverse-on-l .button:first-child {
   margin-left: 5px;
@@ -751,6 +761,12 @@ label {
     grid-template-columns: repeat(3, 31.0344827586%);
     margin-bottom: 5px;
   }
+  @media (max-width: 56.25em) {
+    .cards__list {
+      grid-template-columns: 75%;
+      justify-content: space-evenly;
+    }
+  }
 }
 .cards__item {
   display: flex !important;
@@ -976,22 +992,40 @@ label {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
+  align-items: center;
 }
 .location__cta a {
   align-self: center;
 }
 .location__grid {
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 78em) {
+  .location__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
 .location__sidebar {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
+@media (max-width: 78em) {
+  .location__sidebar {
+    grid-row: 2;
+    flex-direction: column-reverse;
+  }
+}
 .location__sidebar--recent-jobs, .location__sidebar--able {
   display: flex;
   justify-content: center;
+}
+@media (max-width: 78em) {
+  .location__sidebar--able {
+    margin-bottom: 5rem;
+  }
 }
 .location__sidebar--card {
   display: flex;
@@ -1351,6 +1385,17 @@ label {
 .california__locations {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 5rem;
+}
+@media (max-width: 37.5em) {
+  .california__locations {
+    flex-direction: column;
+  }
+}
+@media (max-width: 37.5em) {
+  .california__locations--menu {
+    margin-top: 5rem;
+  }
 }
 .california__locations--menu p {
   font-weight: 700;
@@ -1389,6 +1434,14 @@ label {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 5rem;
+  margin-top: 3rem;
+}
+@media (max-width: 37.5em) {
+  .illinois__locations--menu .menu,
+  .nevada__locations--menu .menu {
+    flex-direction: column;
+  }
 }
 .illinois__locations--menu .menu .menu-item,
 .nevada__locations--menu .menu .menu-item {
@@ -1527,13 +1580,31 @@ label {
 .basic-layout {
   display: flex;
 }
+@media (max-width: 56.25em) {
+  .basic-layout {
+    flex-direction: column;
+  }
+}
 .basic-layout__side {
   margin-right: auto;
   width: 31.0344827586%;
 }
+@media (max-width: 56.25em) {
+  .basic-layout__side {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+}
 .basic-layout__main {
   width: 48.275862069%;
   margin-right: auto;
+}
+@media (max-width: 56.25em) {
+  .basic-layout__main {
+    width: 75%;
+    margin-left: auto;
+  }
 }
 .basic-layout .meta-content {
   width: 100%;
@@ -1606,6 +1677,11 @@ label {
   align-items: flex-start;
   display: flex;
 }
+@media (max-width: 37.5em) {
+  .content-block__split {
+    flex-direction: column;
+  }
+}
 .content-block .button {
   margin-top: 3rem;
 }
@@ -1623,6 +1699,11 @@ label {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-width: 37.5em) {
+  .header__wrapper {
+    overflow: visible;
+  }
+}
 
 .header--job-detail--alternative .header__content {
   padding-bottom: 5rem;
@@ -1635,6 +1716,12 @@ label {
 .header--job-detail--alternative .content-block__list {
   margin-top: 5rem;
   flex-wrap: nowrap;
+}
+@media (max-width: 37.5em) {
+  .header--job-detail--alternative .content-block__list {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }
 .header--job-detail--alternative .content-block__list li {
   margin-top: 0;
@@ -1666,12 +1753,22 @@ label {
   position: relative;
   top: 1.5rem;
 }
+@media (max-width: 37.5em) {
+  .header--job-detail--alternative .button-group {
+    width: 100%;
+  }
+}
 .header--job-detail--alternative .button-group .button--full-width {
   max-width: 100%;
 }
 .header--job-detail--alternative.sticky .button-group {
   margin-top: 0;
   top: -2.5rem;
+}
+@media (max-width: 37.5em) {
+  .header--job-detail--alternative.sticky .button-group {
+    top: 6px;
+  }
 }
 .header--job-detail--alternative .button:not(.button--disabled) {
   background: #efa600;
