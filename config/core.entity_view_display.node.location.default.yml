@@ -52,8 +52,8 @@ content:
       include_static_map: false
       include_link: false
       include_text: true
-      iframe_height: '450'
-      iframe_width: '700'
+      iframe_height: 450px
+      iframe_width: 100%
       iframe_title: '[address]'
       static_scale: 1
       zoom_level: 16
