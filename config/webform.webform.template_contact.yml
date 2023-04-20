@@ -1,75 +1,39 @@
-uuid: 633a88e3-afd4-451c-8d7a-e9a11d66c1fb
+uuid: ffdeb2e4-211e-4276-be6a-72ec2c2b50f0
 langcode: en
-status: open
+status: closed
 dependencies:
   enforced:
     module:
-      - webform
+      - webform_templates
 _core:
-  default_config_hash: CJr5U2B4if_Ff1SZfnNp_csPKwXIynmbUlBC-SmSOAE
-weight: 0
+  default_config_hash: UlrUDoQRwEvYGHsvGvI52R4BJb_Kn6dYNVRedGdM2-g
 open: null
 close: null
+weight: 0
 uid: null
-template: false
+template: true
 archive: false
-id: contact
-title: Contact
-description: 'Basic email contact webform.'
+id: template_contact
+title: 'Contact Us'
+description: 'A basic contact webform template.'
 category: ''
-elements: |-
+elements: |
   name:
-    '#type': textfield
     '#title': 'Your Name'
-    '#title_display': invisible
-    '#placeholder': Name
+    '#type': textfield
     '#required': true
-    '#required_error': 'Please enter your name.'
-    '#default_value': '[current-user:display-name]'
-    '#attributes':
-      class:
-        - contact--name
   email:
-    '#type': email
     '#title': 'Your Email'
-    '#title_display': invisible
-    '#placeholder': Email
+    '#type': email
     '#required': true
-    '#default_value': '[current-user:mail]'
-    '#attributes':
-      class:
-        - contact--email
-  phone:
-    '#type': tel
-    '#title': Phone
-    '#title_display': invisible
-    '#placeholder': Phone
-    '#attributes':
-      class:
-        - contact--phone
-  reason_for_inquiry:
-    '#type': select
-    '#title': 'Reason For Inquiry'
-    '#options':
-      'I''m seeking employment': 'I''m seeking employment'
-      'I''m an employer looking to fill a position': 'I''m an employer looking to fill a position'
-      'I''d like to work at Chartwell': 'I''d like to work at Chartwell'
-      Other: Other
+  subject:
+    '#title': Subject
+    '#type': textfield
     '#required': true
-    '#required_error': 'Please select a reason for your message.'
-    '#attributes':
-      class:
-        - contact--reason
   message:
-    '#type': textarea
     '#title': Message
-    '#title_display': invisible
-    '#placeholder': Message
+    '#type': textarea
     '#required': true
-    '#attributes':
-      class:
-        - contact--message
-    '#test': 'Please ignore this email.'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -83,15 +47,15 @@ settings:
   ajax_effect: ''
   ajax_speed: null
   page: true
-  page_submit_path: /contact
+  page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
   form_title: source_entity_webform
   form_submit_once: false
+  form_exception_message: ''
   form_open_message: ''
   form_close_message: ''
-  form_exception_message: ''
-  form_previous_submissions: false
+  form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
   form_disable_remote_addr: false
@@ -100,36 +64,31 @@ settings:
   form_prepopulate_source_entity: false
   form_prepopulate_source_entity_required: false
   form_prepopulate_source_entity_type: ''
-  form_unsaved: false
-  form_disable_back: false
-  form_submit_back: false
+  form_reset: false
   form_disable_autocomplete: false
   form_novalidate: false
   form_disable_inline_errors: false
   form_required: false
+  form_unsaved: false
+  form_disable_back: false
+  form_submit_back: false
   form_autofocus: false
   form_details_toggle: false
-  form_reset: false
   form_access_denied: default
   form_access_denied_title: ''
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
-  form_attributes: {  }
   form_method: ''
   form_action: ''
+  form_attributes: {  }
   share: false
   share_node: false
   share_theme_name: ''
   share_title: true
   share_page_body_attributes: {  }
   submission_label: ''
-  submission_exception_message: ''
-  submission_locked_message: ''
   submission_log: false
-  submission_excluded_elements: {  }
-  submission_exclude_empty: false
-  submission_exclude_empty_checkbox: false
   submission_views: {  }
   submission_views_replace: {  }
   submission_user_columns: {  }
@@ -138,6 +97,11 @@ settings:
   submission_access_denied_title: ''
   submission_access_denied_message: ''
   submission_access_denied_attributes: {  }
+  submission_exception_message: ''
+  submission_locked_message: ''
+  submission_excluded_elements: {  }
+  submission_exclude_empty: false
+  submission_exclude_empty_checkbox: false
   previous_submission_message: ''
   previous_submissions_message: ''
   autofill: false
@@ -148,21 +112,19 @@ settings:
   wizard_progress_percentage: false
   wizard_progress_link: false
   wizard_progress_states: false
+  wizard_auto_forward: true
+  wizard_auto_forward_hide_next_button: false
+  wizard_keyboard: true
   wizard_start_label: ''
   wizard_preview_link: false
   wizard_confirmation: true
   wizard_confirmation_label: ''
-  wizard_auto_forward: true
-  wizard_auto_forward_hide_next_button: false
-  wizard_keyboard: true
   wizard_track: ''
   wizard_prev_button_label: ''
   wizard_next_button_label: ''
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
-  wizard_page_type: container
-  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
@@ -179,9 +141,9 @@ settings:
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
   confirmation_type: url_message
-  confirmation_url: '<front>'
   confirmation_title: ''
   confirmation_message: 'Your message has been sent.'
+  confirmation_url: '<front>'
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -260,28 +222,24 @@ access:
 handlers:
   email_confirmation:
     id: email
-    handler_id: email_confirmation
     label: 'Email confirmation'
     notes: ''
+    handler_id: email_confirmation
     status: true
     conditions: {  }
     weight: 1
     settings:
       states:
         - completed
-      to_mail: '[current-user:mail]'
+      to_mail: '[webform_submission:values:email:raw]'
       to_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
       from_mail: _default
       from_options: {  }
       from_name: _default
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       subject: '[webform_submission:values:subject:raw]'
       body: '[webform_submission:values:message:value]'
       excluded_elements: {  }
@@ -295,30 +253,30 @@ handlers:
       theme_name: ''
       parameters: {  }
       debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
   email_notification:
     id: email
-    handler_id: email_notification
     label: 'Email notification'
     notes: ''
+    handler_id: email_notification
     status: true
     conditions: {  }
     weight: 2
     settings:
       states:
         - completed
-      to_mail: 'contact@chartwellstaff.com, brian.gillespie@chartwellstaff.com, psullivan@nesc.com, pnoble@madisonresources.com'
+      to_mail: _default
       to_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
       cc_mail: ''
       cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
       from_mail: '[webform_submission:values:email:raw]'
       from_options: {  }
       from_name: '[webform_submission:values:name:raw]'
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
       subject: '[webform_submission:values:subject:raw]'
       body: '[webform_submission:values:message:value]'
       excluded_elements: {  }
@@ -332,4 +290,8 @@ handlers:
       theme_name: ''
       parameters: {  }
       debug: false
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
 variants: {  }
