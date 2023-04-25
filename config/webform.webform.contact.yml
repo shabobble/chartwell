@@ -306,7 +306,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'contact@chartwellstaff.com, brian.gillespie@chartwellstaff.com, psullivan@nesc.com, pnoble@madisonresources.com'
+      to_mail: psullivan@nesc.com
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }
@@ -319,8 +319,8 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
+      subject: _default
+      body: "Reason for Inquiry: [webform_submission:values:reason_for_inquiry:nolabel]<br />\r\n<br />\r\nHello,<br />\r\n<br />\r\nMy name is [webform_submission:values:name:nolabel]. [webform_submission:values:message:nolabel].&nbsp;<br />\r\n<br />\r\nYou can reach me by phone at [webform_submission:values:phone:nolabel] or by email at [webform_submission:values:email:nolabel].<br />\r\n<br />\r\nThanks!"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
