@@ -1,0 +1,92 @@
+_core:
+  default_config_hash: xu0yG13sSQJcXrOJJqsn44W_hUWAIFHVlphrzxT2ycU
+page_title: 'Chartwell Staffing Solutions Sitemap'
+message:
+  value: '<p>Looking for something in particular? We have a complete listing of all our pages here. Still not finding it? <a href="https://chartwellstaff.com/contact">Contact us.</a></p>'
+  format: full_html
+plugins:
+  frontpage:
+    enabled: true
+    weight: -49
+    settings:
+      title: 'Front page'
+      rss: /rss.xml
+    id: frontpage
+    provider: sitemap
+  'menu:il':
+    enabled: true
+    weight: -43
+    settings:
+      title: 'Illinois Locations'
+      show_disabled: false
+    id: 'menu:il'
+    provider: sitemap
+  'menu:main':
+    enabled: true
+    weight: -44
+    settings:
+      title: 'Main navigation'
+      show_disabled: false
+    id: 'menu:main'
+    provider: sitemap
+  'menu:nevada-locations':
+    enabled: true
+    weight: -42
+    settings:
+      title: 'Nevada Locations'
+      show_disabled: false
+    id: 'menu:nevada-locations'
+    provider: sitemap
+  'menu:northern-california-locations':
+    enabled: true
+    weight: -41
+    settings:
+      title: 'Southern California Locations'
+      show_disabled: false
+    id: 'menu:northern-california-locations'
+    provider: sitemap
+  'menu:northern-california-locations-1':
+    enabled: true
+    weight: -40
+    settings:
+      title: 'Northern California Locations'
+      show_disabled: false
+    id: 'menu:northern-california-locations-1'
+    provider: sitemap
+  'vocabulary:job_type':
+    enabled: true
+    weight: -37
+    settings:
+      title: 'Job Type'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:job_type'
+    provider: sitemap
+  'vocabulary:us_states':
+    enabled: true
+    weight: -35
+    settings:
+      title: 'US States'
+      show_description: false
+      show_count: false
+      display_unpublished: false
+      term_depth: 9
+      term_count_threshold: 0
+      customize_link: false
+      term_link: entity.taxonomy_term.canonical|taxonomy_term
+      always_link: false
+      enable_rss: false
+      rss_link: view.taxonomy_term.feed_1|arg_0
+      rss_depth: 9
+    id: 'vocabulary:us_states'
+    provider: sitemap
+include_css: true
