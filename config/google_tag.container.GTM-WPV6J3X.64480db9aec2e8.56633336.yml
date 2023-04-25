@@ -1,0 +1,72 @@
+uuid: a4c4e7e7-8837-4314-b022-6ab0addc81e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+    - taxonomy
+    - user
+    - webform
+id: GTM-WPV6J3X.64480db9aec2e8.56633336
+label: GTM-WPV6J3X
+weight: 0
+tag_container_ids:
+  - GTM-WPV6J3X
+advanced_settings: {  }
+dimensions_metrics: {  }
+conditions:
+  response_code:
+    id: response_code
+    negate: false
+    response_codes: ''
+  node_type:
+    id: node_type
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles: {  }
+  request_path:
+    id: request_path
+    negate: false
+    pages: ''
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles: {  }
+  webform:
+    id: webform
+    negate: false
+    context_mapping: {  }
+    webforms: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles: {  }
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles: {  }
+  'entity_bundle:webform_submission':
+    id: 'entity_bundle:webform_submission'
+    negate: false
+    context_mapping:
+      webform_submission: '@webform.webform_submission_route_context:webform_submission'
+    bundles: {  }
+events:
+  custom: {  }
+  generate_lead:
+    value: ''
+    currency: ''
+  login:
+    method: CMS
+  search: {  }
+  sign_up:
+    method: CMS
+  webform_purchase: {  }

@@ -1,7 +1,7 @@
 progress:
-  '#changed': 1682435166
+  '#changed': 1682437022
   '#changed_by': '1'
-  '#completed_items': 19
+  '#completed_items': 24
   '#items':
     install_and_enable_seo_checklist_module:
       '#completed': 1682433514
@@ -59,4 +59,19 @@ progress:
       '#uid': '1'
     install_and_enable_alternate_hreflang_module:
       '#completed': 1682435166
+      '#uid': '1'
+    install_and_enable_xml_sitemap_module:
+      '#completed': 1682437022
+      '#uid': '1'
+    configure_xml_sitemap_module:
+      '#completed': 1682437022
+      '#uid': '1'
+    install_and_enable_robotstxt_module:
+      '#completed': 1682437022
+      '#uid': '1'
+    add_xml_sitemap_to_your_robotstxt_file:
+      '#completed': 1682437022
+      '#uid': '1'
+    set_up_cron:
+      '#completed': 1682437022
       '#uid': '1'

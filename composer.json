@@ -35,6 +35,7 @@
         "drupal/field_token_value": "^3.0",
         "drupal/filefield_paths": "^1.0@beta",
         "drupal/gin": "^3.0@RC",
+        "drupal/google_tag": "^2.0",
         "drupal/hreflang": "^1.11",
         "drupal/libraries": "^4.0",
         "drupal/menu_token": "^9.1@alpha",
