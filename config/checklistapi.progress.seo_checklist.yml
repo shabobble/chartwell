@@ -1,7 +1,7 @@
 progress:
-  '#changed': 1682437022
+  '#changed': 1682446335
   '#changed_by': '1'
-  '#completed_items': 24
+  '#completed_items': 46
   '#items':
     install_and_enable_seo_checklist_module:
       '#completed': 1682433514
@@ -74,4 +74,70 @@ progress:
       '#uid': '1'
     set_up_cron:
       '#completed': 1682437022
+      '#uid': '1'
+    google_accounts_sign_ups:
+      '#completed': 1682444548
+      '#uid': '1'
+    install_and_enable_google_tag_manager_module:
+      '#completed': 1682444548
+      '#uid': '1'
+    configure_google_tag_manager_module:
+      '#completed': 1682444548
+      '#uid': '1'
+    submit_xml_sitemap_to_google:
+      '#completed': 1682444548
+      '#uid': '1'
+    get_a_microsoft_account:
+      '#completed': 1682444548
+      '#uid': '1'
+    authenticate_with_bing:
+      '#completed': 1682444548
+      '#uid': '1'
+    submit_xml_sitemap_to_bing:
+      '#completed': 1682444548
+      '#uid': '1'
+    install_and_enable_easy_breadcrumbs_module:
+      '#completed': 1682446212
+      '#uid': '1'
+    configure_easy_breadcrumbs_module:
+      '#completed': 1682446212
+      '#uid': '1'
+    install_and_enable_d8_editor_advanced_link_module:
+      '#completed': 1682446212
+      '#uid': '1'
+    configure_text_formats_to_use_d8_editor_advanced_link_module:
+      '#completed': 1682446212
+      '#uid': '1'
+    install_and_enable_sitemap_module:
+      '#completed': 1682446212
+      '#uid': '1'
+    configure_sitemap_module:
+      '#completed': 1682446212
+      '#uid': '1'
+    install_and_enable_search_404_module:
+      '#completed': 1682446212
+      '#uid': '1'
+    configure_search_404_module:
+      '#completed': 1682446212
+      '#uid': '1'
+    secure_your_website_with_https:
+      '#completed': 1682446274
+      '#uid': '1'
+    move_to_fast_hosting:
+      '#completed': 1682446274
+      '#uid': '1'
+    read_drupal_8_seo_by_ben_finklea:
+      '#completed': 1682446335
+      '#uid': '1'
+    use_and_link_to_our_online_drupal_seo_guide:
+      '#completed': 1682446335
+      '#uid': '1'
+    sign_up_for_a_drupal_org_account_if_you_dont_already_have_one:
+      '#completed': 1682446335
+      '#uid': '1'
+    if_the_seo_checklist_module_helped_you_please_help_get_the_word_out:
+      '#completed': 1682446335
+      '#uid': '1'
+    report_a_bug_or_recommend_changes_to_the_seo_checklist_module:
+      '#completed': 1682446335
       '#uid': '1'
