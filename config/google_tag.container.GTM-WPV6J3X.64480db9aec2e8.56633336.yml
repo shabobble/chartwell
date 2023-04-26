@@ -15,50 +15,7 @@ tag_container_ids:
   - GTM-WPV6J3X
 advanced_settings: {  }
 dimensions_metrics: {  }
-conditions:
-  response_code:
-    id: response_code
-    negate: false
-    response_codes: ''
-  node_type:
-    id: node_type
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles: {  }
-  request_path:
-    id: request_path
-    negate: false
-    pages: ''
-  user_role:
-    id: user_role
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
-    roles: {  }
-  webform:
-    id: webform
-    negate: false
-    context_mapping: {  }
-    webforms: {  }
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles: {  }
-  'entity_bundle:taxonomy_term':
-    id: 'entity_bundle:taxonomy_term'
-    negate: false
-    context_mapping:
-      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
-    bundles: {  }
-  'entity_bundle:webform_submission':
-    id: 'entity_bundle:webform_submission'
-    negate: false
-    context_mapping:
-      webform_submission: '@webform.webform_submission_route_context:webform_submission'
-    bundles: {  }
+conditions: {  }
 events:
   custom: {  }
   generate_lead:
