@@ -7,6 +7,6 @@ logo:
   use_default: 0
   path: 'public://logo.svg'
 favicon:
-  use_default: 0
+  use_default: 1
   path: 'public://Chartwell Secondary Logo - CMYK (1).ico'
   mimetype: image/vnd.microsoft.icon
