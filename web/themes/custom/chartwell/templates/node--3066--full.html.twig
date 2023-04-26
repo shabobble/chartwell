@@ -1,0 +1,386 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if label and not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer>
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    <section class="light-gradient-overlay">
+      <div class="container">
+        <div class="introduction">
+          <div class="introduction__text">
+            <h1 class="u-text-center heading-1">
+              Turn to the experts at Chartwell.<br>
+
+              We have your back!
+            </h1>
+          </div>
+          <div class="introduction__text u-self-center">
+            <p class="large-text">
+              At Chartwell, we exist to make the hiring process easier for businesses like yours. We have a vast network of connections from all over the nation, and we are determined to find the hidden talent that is out there for your company. We can find candidates who are skilled laborers who can start tomorrow.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h1 class="heading-1 u-text-center">With Chartwell, you can:</h1>
+        <div class="u-spacer"></div>
+        <div class="icon-grid">
+          <div class="icon-grid__item">
+            <div class="icon-grid__item--icon">
+              <svg>
+                <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Access"></use>
+              </svg>
+            </div>
+            <div class="icon-grid__item--text">
+              <h3>Access</h3>
+              <p>Tough-to-find Talent</p>
+            </div>
+          </div>
+          <div class="icon-grid__item">
+            <div class="icon-grid__item--icon">
+              <svg>
+                <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Cut-Costs"></use>
+              </svg>
+            </div>
+            <div class="icon-grid__item--text">
+              <h3>Cut Costs</h3>
+              <p>Operational Efficiency</p>
+            </div>
+          </div>
+          <div class="icon-grid__item">
+            <div class="icon-grid__item--icon">
+              <svg>
+                <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Dependable-Talent"></use>
+              </svg>
+            </div>
+            <div class="icon-grid__item--text">
+              <h3>Dependable Talent</h3>
+              <p>Strong Candidate Networks</p>
+            </div>
+          </div>
+          <div class="icon-grid__item">
+            <div class="icon-grid__item--icon">
+              <svg>
+                <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Accelerate-Projects"></use>
+              </svg>
+            </div>
+            <div class="icon-grid__item--text">
+              <h3>Accelerate Projects</h3>
+              <p>With Project Demands</p>
+            </div>
+          </div>
+          <div class="icon-grid__item">
+            <div class="icon-grid__item--icon">
+              <svg>
+                <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Increase-Operational-Efficiency"></use>
+              </svg>
+            </div>
+            <div class="icon-grid__item--text">
+              <h3>Increase Operational Efficiency</h3>
+              <p>Spent on recruitment efforts</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="light-gradient-overlay" id="industries">
+          <div class="container">
+            <div class="industry-links">
+              <h2 class="heading-secondary heading-secondary--dark u-text-center u-vertical-margin-large">Industries We Serve</h2>
+              <div class="bucket-links-grid">
+                <div class="bucket-link">
+                {# <a href="{{ url('<front>') }}industries/operations" class="bucket-link"> #}
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-operations"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Operations</h3>
+                  <p><strong>Smooth <span class="emphasis">operations</span> are the backbone of any business</strong></p> 
+                {# </a> #}
+                </div>
+                <div class="bucket-link">
+                {# <a href="{{ url('<front>') }}industries/light-industrial" class="bucket-link"> #}
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Light-Industrial"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Light Industrial</h3>
+                  <p><strong>Building the <span class="emphasis">industry</span> of tomorrow, today</strong></p>
+                {# </a> #}
+                </div>
+                <div class="bucket-link">
+                {# <a href="{{ url('<front>') }}industries/manufacturing" class="bucket-link"> #}
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Manufacturing"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Manufacturing</h3>
+                  <p><strong>Manufacturing <span class="emphasis">solutions</span> that meet your demands</strong></p>
+                {# </a> #}
+                </div>
+                <div class="bucket-link">
+                {# <a href="{{ url('<front>') }}industries/engineering" class="bucket-link"> #}
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Engineering"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Engineering</h3>
+                  <p><strong>The <span class="emphasis">engine</span> that will drive your company</strong></p>
+                {# </a> #}
+                </div>
+                <div class="bucket-link">
+                {# <a href="{{ url('<front>') }}industries/clerical-administrative" class="bucket-link"> #}
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Administrative-and-Clerical"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Clerical & Administrative</h3>
+                  <p><strong>Admin assistance with a <span class="emphasis">personal</span> touch</strong></p>
+                {# </a> #}
+                </div>
+                <div class="bucket-link">
+                {# <a href="{{ url('<front>') }}industries/finance" class="bucket-link"> #}
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-banknote"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Finance</h3>
+                  <p><strong>The very best employees will <span class="emphasis">improve</span> your bottom line</strong></p>
+                {# </a> #}
+                </div>
+                <div class="bucket-link">
+                {# <a href="{{ url('<front>') }}industries/human-resources" class="bucket-link"> #}
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-HR"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Human Resources</h3>
+                  <p><strong>Unlocking the hidden <span class="emphasis">potential</span> of your team</strong></p>
+                {# </a> #}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="accordion" class="white-background">
+          <div class="container">
+            <div class="accordion__header">
+              <h1 class="heading-1">Services we provide with excellence</h1>
+              <img src="/sites/default/files/logo.svg" alt="logo">
+            </div>
+            <div class="accordion-div">
+              <div class="accordion-div__item">
+                <div class="accordion-div__item--primary-text accordion">
+                  <h3>
+                    <svg class="accordion--close">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-minus"></use>
+                    </svg>
+                    <svg class="accordion--open">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-plus"></use>
+                    </svg>
+                    Compliance Consultation
+                  </h3>
+                </div>
+                <div class="accordion-div__item--panel">
+                  <div class="col-half">
+                    <p>Looking for a staffing partner to help with compliance issues? Look no further than Chartwell Staffing Solutions! Our team of experts stays up-to-date with changing regulations and can offer guidance and training to keep your business compliant. With our pre-employment screening, employee paperwork management, and regular auditing, we can help you avoid any legal or financial penalties.</p>
+                    <a href="{{ url('<front>') }}contact" class="btn">Schedule Consultation</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-div__item">
+                <div class="accordion-div__item--primary-text accordion">
+                  <h3>
+                    <svg class="accordion--close">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-minus"></use>
+                    </svg>
+                    <svg class="accordion--open">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-plus"></use>
+                    </svg>
+                    Traditional Temporary Services
+                  </h3>
+                </div>
+                <div class="accordion-div__item--panel">
+                  <div class="col-half">
+                    <p>We understand that finding reliable temporary employees can be a challenge for businesses. That's why we offer comprehensive temporary employment solutions that prioritize quality and speed. Our team of staffing experts specializes in finding top-tier talent nationwide, ensuring that your projects are completed with ease. With our thorough pre-employment screening process, you can trust that the employees we provide are dependable and reliable. Whether you need specialists for a short-term project or just need temporary support, we are here to help you find the right employees quickly and efficiently.</p>
+                    <a href="{{ url('<front>') }}contact" class="btn">Learn More</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-div__item">
+                <div class="accordion-div__item--primary-text accordion">
+                  <h3>
+                    <svg class="accordion--close">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-minus"></use>
+                    </svg>
+                    <svg class="accordion--open">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-plus"></use>
+                    </svg>
+                    Temp to Hire Services
+                  </h3>
+                </div>
+                <div class="accordion-div__item--panel">
+                  <div class="col-half">
+                    <p>Are you looking to reduce hiring risks and ensure a perfect cultural fit for your company? Chartwell Staffing Solutions has got you covered! Our temp-to-hire services provide you with the opportunity to evaluate a Chartwell employee on the job before extending an employment offer. This unique staffing option allows you to assess skills and fit first-hand, so you can make informed decisions and avoid costly hiring mistakes.</p>
+                    <a href="{{ url('<front>') }}contact" class="btn">Get Started</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-div__item">
+                <div class="accordion-div__item--primary-text accordion">
+                  <h3>
+                    <svg class="accordion--close">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-minus"></use>
+                    </svg>
+                    <svg class="accordion--open">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-plus"></use>
+                    </svg>
+                    Direct Hire Services
+                  </h3>
+                </div>
+                <div class="accordion-div__item--panel">
+                  <div class="col-half">
+                    <p>At Chartwell Staffing Solutions, we know that finding the perfect employee can be a daunting task, especially for companies without a full HR team. But don't worry, that's where we come in! Our expert team offers tailored recruitment services, ensuring that we find the candidates with the best hard and soft skills for the job. We conduct an in-depth analysis of your company's culture, job description, and specific hiring needs to ensure the perfect fit. So why not let us take the burden off your shoulders and help you find the right employee?</p>
+                    <a href="{{ url('<front>') }}contact" class="btn">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-div__item">
+                <div class="accordion-div__item--primary-text accordion">
+                  <h3>
+                    <svg class="accordion--close">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-minus"></use>
+                    </svg>
+                    <svg class="accordion--open">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-plus"></use>
+                    </svg>
+                    Payrolling Services
+                  </h3>
+                </div>
+                <div class="accordion-div__item--panel">
+                  <div class="col-half">
+                    <p>Say goodbye to the hassle of onboarding with Chartwell Staffing Solutions! Our Payroll Services allow companies to expand their talent base or rehire furloughed or laid-off employees without worrying about the financial and administrative burden of hiring full-time staff. From hours and recordkeeping to tax withholding and unemployment insurance, our expert team takes care of all payroll and administrative functions. So, you can focus on growing your business while we handle the nitty-gritty details.</p>
+                    <a href="{{ url('<front>') }}contact" class="btn">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-div__item">
+                <div class="accordion-div__item--primary-text accordion">
+                  <h3>
+                    <svg class="accordion--close">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-minus"></use>
+                    </svg>
+                    <svg class="accordion--open">
+                      <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-plus"></use>
+                    </svg>
+                    Vendor on Premise Services
+                  </h3>
+                </div>
+                <div class="accordion-div__item--panel">
+                  <div class="col-half">
+                    <p>Look no further than Chartwell Staffing Solutions! Our dedicated representatives act as an extension of your HR department to help streamline your staffing needs, reach your organizational goals, and boost your profitability. With our team handling your staffing requirements, your internal HR department can focus on your current employees, ensuring they feel supported and engaged. Say goodbye to turnover headaches and hello to a motivated team that drives your business forward.</p>
+                    <a href="{{ url('<front>') }}contact" class="btn">VOP Solutions</a>
+                  </div>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </section>
+  </div>
+
+</article>

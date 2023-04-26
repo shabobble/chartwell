@@ -54,6 +54,14 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  background-image: linear-gradient(to bottom, transparent, #e5f0f7), url(../img/watermark.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 ul {
   list-style: none;
 }
@@ -114,6 +122,10 @@ section .container {
 .break {
   flex-basis: 100%;
   height: 0;
+}
+
+.white-background {
+  background-color: #fff;
 }
 
 body {
@@ -201,6 +213,13 @@ h1 {
   margin: 0;
 }
 
+.heading-1 {
+  font-size: 4.6rem;
+  text-transform: uppercase;
+  color: #374760;
+  font-weight: 700;
+}
+
 .u-margin-bottom-medium {
   margin-bottom: 2.4rem !important;
 }
@@ -226,6 +245,10 @@ h1 {
   justify-content: center;
 }
 
+.u-self-center {
+  align-self: center !important;
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -241,6 +264,79 @@ h1 {
 
 .u-fw-700 {
   font-weight: 700 !important;
+}
+
+.u-spacer {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 7.5rem;
+  clear: both;
+}
+
+.accordion-div {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+.accordion-div__item--primary-text {
+  color: #374760;
+}
+.accordion-div__item--panel {
+  padding: 0 1.8rem;
+  background-color: #ffffff;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease-out;
+}
+.accordion-div__item--panel .col-half {
+  padding-top: 3rem;
+  width: 50%;
+}
+
+.accordion {
+  display: block;
+  position: relative;
+  padding: 1.5rem 1rem 1.5rem 2rem;
+  margin: 5px 0 0;
+  cursor: pointer;
+  border-bottom: 1px solid #efa600;
+  outline: none;
+  transition: 0.4s;
+}
+.accordion.active {
+  scroll-margin-top: 10rem;
+}
+.accordion h3 .accordion--close {
+  display: none;
+}
+.accordion h3 .accordion--open {
+  display: inline-block;
+}
+.accordion__header {
+  display: grid;
+  grid-template-columns: 50% min-content;
+  justify-content: space-between;
+}
+.accordion__header img {
+  height: 15rem;
+  width: 15rem;
+}
+
+.accordion--close,
+.accordion--open {
+  width: 2rem;
+  height: 2rem;
+  fill: #efa600;
+}
+
+.accordion.active h3 .accordion--close {
+  display: inline-block;
+}
+.accordion.active h3 .accordion--open {
+  display: none;
 }
 
 .bucket-link {
@@ -363,7 +459,6 @@ a.button--full-width {
   color: #ffffff;
   border: 2px solid #252525;
   background-color: #0f1941;
-  border-radius: 5rem;
   font-size: 1.7rem;
   text-decoration: none;
   font-weight: bold;
@@ -694,6 +789,10 @@ label {
   height: 60vh;
   background-image: linear-gradient(to right bottom, rgba(229, 240, 247, 0.8), #374760), url("../img/contact.png");
   background-position-y: 38%;
+}
+.header--employers {
+  height: 90vh;
+  background-image: linear-gradient(to right bottom, rgba(229, 240, 247, 0.8), #374760), url("../img/employers.png");
 }
 .header__video {
   position: absolute;
@@ -1402,6 +1501,32 @@ label {
   align-self: end;
 }
 
+.introduction {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 33.3333333333% 50%;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 5rem;
+}
+.icon-grid__item {
+  display: flex;
+  gap: 3rem;
+}
+.icon-grid__item--icon svg {
+  height: 6rem;
+  width: 5rem;
+  fill: #efa600;
+}
+.icon-grid__item--text h3 {
+  color: #374760;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .california__locations {
   display: flex;
   justify-content: space-evenly;
@@ -1495,7 +1620,6 @@ label {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-
 .intro {
   display: grid;
   grid-template-columns: 50% 33.3333333333%;
