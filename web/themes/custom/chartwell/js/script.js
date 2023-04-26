@@ -36,3 +36,35 @@ function showJobFrontside(elem) {
         })
     })
 })(jQuery);
+
+function serviceAccordion() {
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+  
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+  
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          let active = document.querySelectorAll(".accordion-div .accordion.active");
+          for (let j = 0; j < active.length; j++) {
+            active[j].classList.remove("active");
+            active[j].nextElementSibling.style.maxHeight = null;
+          }
+          panel.style.maxHeight = panel.scrollHeight + 100 + "px";
+        }
+        this.classList.toggle("active");
+      });
+    }
+  
+    let hash = location.hash.substr(1);
+    console.log(hash);
+    if (hash) {
+      let activeTitle = document.getElementById(hash);
+      activeTitle.click();
+    }
+  }
+
+  serviceAccordion();
