@@ -1,0 +1,19 @@
+uuid: b23d9a63-a1c3-4b31-b8a9-31aead235fb4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_header
+    - node.type.industry
+id: node.industry.field_header
+field_name: field_header
+entity_type: node
+bundle: industry
+label: Header
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
