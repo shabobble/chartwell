@@ -1,0 +1,8 @@
+uuid: 33d21daa-37ed-495c-9251-6597dbdb59e1
+langcode: en
+status: true
+dependencies: {  }
+id: industries
+label: Industries
+description: ''
+locked: false
