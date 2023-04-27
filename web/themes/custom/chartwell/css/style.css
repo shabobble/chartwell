@@ -1705,8 +1705,8 @@ label {
   padding-bottom: 0;
   text-align: center;
 }
-.industry-links {
-  display: flex !important;
+.industry__bucket-links .extra-wide {
+  display: flex;
   justify-content: center;
 }
 
