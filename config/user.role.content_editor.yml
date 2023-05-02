@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - node.type.article
+    - node.type.industry
+    - node.type.location
     - node.type.page
     - taxonomy.vocabulary.tags
   module:
@@ -46,3 +48,9 @@ permissions:
   - 'view all revisions'
   - 'view own unpublished content'
   - 'view the administration theme'
+  - 'create industry content'
+  - 'create location content'
+  - 'delete any industry content'
+  - 'delete any location content'
+  - 'edit any industry content'
+  - 'edit any location content'

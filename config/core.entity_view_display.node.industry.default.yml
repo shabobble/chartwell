@@ -6,10 +6,13 @@ dependencies:
     - field.field.node.industry.body
     - field.field.node.industry.field_banner_background_image
     - field.field.node.industry.field_cta_background_image
+    - field.field.node.industry.field_cta_body
     - field.field.node.industry.field_cta_header
     - field.field.node.industry.field_header
+    - field.field.node.industry.field_job_examples
     - node.type.industry
   module:
+    - entity_reference_revisions
     - text
     - user
 id: node.industry.default
@@ -42,6 +45,13 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
+  field_cta_body:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
   field_cta_header:
     type: string
     label: hidden
@@ -57,6 +67,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_job_examples:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 107
     region: content
   links:
     settings: {  }

@@ -118,9 +118,16 @@
         </div>
       </div>
     </section>
+    <section id="job-examples" class="u-center-flex">
+      <div class="container">
+        <h2 class="heading-1 u-text-center u-margin-bottom-large u-half-center">A Few {{ node.label }} Areas We Support</h2>
+        {{ content.field_job_examples }}
+      </div>
+    </section>
     <section class="u-large-padding parallax-container" style="background-image: url({{ cta_background_image }});">
       <div class="container">
         <h1 class="u-white-text heading-1 industry__cta--header">{{ node.field_cta_header.value }}</h1>
+        <p class="industry__cta--body u-white-text">{{ node.field_cta_body.value }}</p>
       </div>
     </section>
     <section class="white-background industry__bucket-links">
