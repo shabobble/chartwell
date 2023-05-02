@@ -1,0 +1,10 @@
+uuid: 1cdb8ea0-41b6-4773-8ed7-b64d41ff650e
+langcode: en
+status: true
+dependencies: {  }
+id: job_examples
+label: 'Job Examples'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

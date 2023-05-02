@@ -224,6 +224,10 @@ h1 {
   margin-bottom: 2.4rem !important;
 }
 
+.u-margin-bottom-large {
+  margin-bottom: 6rem !important;
+}
+
 .u-vertical-margin-large {
   margin: 5rem 0 !important;
 }
@@ -276,6 +280,16 @@ h1 {
 
 .u-large-padding {
   padding: 16.5rem 0 9.5 rem;
+}
+
+.u-orange-fill {
+  fill: #efa600 !important;
+}
+
+.u-half-center {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .accordion-div {
@@ -1695,9 +1709,8 @@ label {
   display: flex;
   justify-content: center;
 }
-.industry__cta--header {
+.industry__cta--header, .industry__cta--body {
   width: 50%;
-  margin-left: auto;
   margin-right: auto;
 }
 .industry__bucket-links {
@@ -1715,6 +1728,19 @@ label {
   justify-content: space-evenly;
   justify-items: center;
   grid-column-gap: 5rem;
+}
+.industry__job {
+  display: flex;
+  align-items: center;
+}
+.industry__job svg {
+  margin-right: 3rem;
+}
+.industry__jobs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20rem;
+  grid-row-gap: 6rem;
 }
 
 .parallax-container {

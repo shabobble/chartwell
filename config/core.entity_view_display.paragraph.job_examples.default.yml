@@ -1,0 +1,21 @@
+uuid: baedb6d6-b34c-4f9d-9691-86d23d16a6b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.job_examples.field_job_title
+    - paragraphs.paragraphs_type.job_examples
+id: paragraph.job_examples.default
+targetEntityType: paragraph
+bundle: job_examples
+mode: default
+content:
+  field_job_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
