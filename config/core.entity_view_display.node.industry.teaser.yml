@@ -7,8 +7,10 @@ dependencies:
     - field.field.node.industry.body
     - field.field.node.industry.field_banner_background_image
     - field.field.node.industry.field_cta_background_image
+    - field.field.node.industry.field_cta_body
     - field.field.node.industry.field_cta_header
     - field.field.node.industry.field_header
+    - field.field.node.industry.field_job_examples
     - node.type.industry
   module:
     - text
@@ -34,5 +36,7 @@ content:
 hidden:
   field_banner_background_image: true
   field_cta_background_image: true
+  field_cta_body: true
   field_cta_header: true
   field_header: true
+  field_job_examples: true
