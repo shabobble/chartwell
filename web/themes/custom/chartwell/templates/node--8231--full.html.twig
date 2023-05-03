@@ -1,0 +1,204 @@
+{#
+/**
+ * @file
+ * Theme override to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: (optional) The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: (optional) Themed creation date field.
+ * - author_name: (optional) Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ *
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if label and not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  {% if display_submitted %}
+    {# <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
+      </div>
+    </footer> #}
+  {% endif %}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    <section class="light-gradient-overlay">
+      <div class="container">
+        <div class="introduction">
+          <div class="introduction__text">
+            <h1 class="u-text-center heading-1 u-margin-bottom-medium">
+              The Chartwell Brand Promise
+            </h1>
+            <h2 class="heading-2 u-text-center u-blue-text">
+              Maintain High Standards, Mitigate Risk and Maximize Value
+            </h2>
+          </div>
+          <div class="introduction__text u-self-center">
+            <p class="large-text u-margin-bottom-medium">
+              We are dedicated to helping you find the position that is right for you. Our network of specialized associates allows us to give you in-depth insight into your career options so you can find the best fit. We understand the resources you need to be successful, and we've designed our services around them. We're dedicated to understanding your needs and matching you with the position that's right for you.
+            </p>
+            <p class="large-text u-margin-bottom-medium">
+              We are specialists in matching candidates with a job that will bring out their best qualities and help them achieve their professional goals. We take the time to get to know each candidate, because we want every candidate to get a job that fits them perfectly.
+            </p>
+            <p class="large-text">
+              This is a full service recruiting agency that is committed to finding jobs for people, not filling slots for positions. We combine our expertise with technology tools to match candidates with jobs that meet their qualifications and needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="light-gradient-overlay" id="industries">
+          <div class="container">
+            <div class="industry-links">
+              <h2 class="heading-secondary heading-secondary--dark u-text-center u-vertical-margin-large">Industries We Serve</h2>
+              <div class="bucket-links-grid">
+                <a href="/industries/operations" class="bucket-link">
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-operations"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Operations</h3>
+                  <p><strong>Smooth <span class="emphasis">operations</span> are the backbone of any business</strong></p> 
+                </a>
+                <a href="/industries/light-industrial" class="bucket-link">
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Light-Industrial"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Light Industrial</h3>
+                  <p><strong>Building the <span class="emphasis">industry</span> of tomorrow, today</strong></p>
+                </a>
+                <a href="/industries/manufacturing" class="bucket-link">
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Manufacturing"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Manufacturing</h3>
+                  <p><strong>Manufacturing <span class="emphasis">solutions</span> that meet your demands</strong></p>
+                </a>
+                <a href="/industries/engineering" class="bucket-link">
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Engineering"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Engineering</h3>
+                  <p><strong>The <span class="emphasis">engine</span> that will drive your company</strong></p>
+                </a>
+                <a href="/industries/clerical-administrative" class="bucket-link">
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-Administrative-and-Clerical"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Clerical & Administrative</h3>
+                  <p><strong>Admin assistance with a <span class="emphasis">personal</span> touch</strong></p>
+                </a>
+                <a href="/industries/finance" class="bucket-link">
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-banknote"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Finance</h3>
+                  <p><strong>The very best employees will <span class="emphasis">improve</span> your bottom line</strong></p>
+                </a>
+                <a href="/industries/human-resources" class="bucket-link">
+                  <svg class="icon icon-large">
+                    <use xlink:href="/themes/custom/chartwell/img/sprite.svg#icon-HR"></use>
+                  </svg>
+                  <h3 class="heading-tertiary">Human Resources</h3>
+                  <p><strong>Unlocking the hidden <span class="emphasis">potential</span> of your team</strong></p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="large-padding industry__mid-banner no-overlay resume">
+          <div class="container">
+            <div class="industry__mid-banner--text-right">
+              <h2 class="heading-2">Leave it to the professionals.</h2>
+              <h1 class="heading-1">Submit Resume</h1>
+              <a href="https://app.ableteams.com/profile/#/cw/hq/login?signup=true" class="btn" target="_blank">Submit Resume</a>
+            </div>
+          </div>
+        </section>
+        <section class="large-padding industry__mid-banner no-overlay search-jobs">
+          <div class="container">
+            <div class="industry__mid-banner--text-left">
+              <h1 class="heading-1 u-white-text">Search Jobs</h1>
+              <a href="/jobs" class="btn btn--white">Search Jobs</a>
+            </div>
+          </div>
+        </section>
+  </div>
+
+</article>

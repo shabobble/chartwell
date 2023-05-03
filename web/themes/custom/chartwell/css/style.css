@@ -220,6 +220,11 @@ h1 {
   font-weight: 700;
 }
 
+.heading-2 {
+  font-size: 3.5rem;
+  color: #374760;
+}
+
 .u-margin-bottom-medium {
   margin-bottom: 2.4rem !important;
 }
@@ -414,6 +419,10 @@ h1 {
   background-color: #efa600;
   border: 2px solid #374760;
   color: #374760;
+}
+.btn--white {
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 .content-block__split .button-group {
@@ -822,6 +831,10 @@ label {
 .header--employers {
   height: 90vh;
   background-image: linear-gradient(to right bottom, rgba(229, 240, 247, 0.8), #374760), url("../img/employers.png");
+}
+.header--jobseekers {
+  height: 90vh;
+  background-image: linear-gradient(to right bottom, rgba(229, 240, 247, 0.8), #374760), url("../img/jobseekers.png");
 }
 .header__video {
   position: absolute;
@@ -1741,6 +1754,22 @@ label {
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 20rem;
   grid-row-gap: 6rem;
+}
+.industry__mid-banner.resume {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgb(255, 255, 255)), url(../img/resume.png);
+}
+.industry__mid-banner.search-jobs {
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgb(8, 17, 108)), url(../img/jobs.png);
+}
+.industry__mid-banner--text-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.industry__mid-banner--text-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .parallax-container {
