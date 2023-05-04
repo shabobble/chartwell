@@ -6,6 +6,7 @@ global-styling:
       css/style.css: {}
   js:
     js/script.js: {}
+    '//widgets.sociablekit.com/linkedin-profile-posts/widget.js': { type: external, attributes: { defer: true, async: true} }
   dependencies:
     - core/jquery
 
