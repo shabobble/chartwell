@@ -225,6 +225,10 @@ h1 {
   color: #374760;
 }
 
+.u-margin-bottom-small {
+  margin-bottom: 2rem !important;
+}
+
 .u-margin-bottom-medium {
   margin-bottom: 2.4rem !important;
 }
@@ -284,7 +288,7 @@ h1 {
 }
 
 .u-large-padding {
-  padding: 16.5rem 0 9.5 rem;
+  padding: 16.5rem 0 9.5 rem !important;
 }
 
 .u-orange-fill {
@@ -292,9 +296,17 @@ h1 {
 }
 
 .u-half-center {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 50% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.u-half-width {
+  width: 50% !important;
+}
+
+.u-margin-right-small {
+  margin-right: 1rem !important;
 }
 
 .accordion-div {
@@ -835,6 +847,10 @@ label {
 .header--jobseekers {
   height: 90vh;
   background-image: linear-gradient(to right bottom, rgba(229, 240, 247, 0.8), #374760), url("../img/jobseekers.png");
+}
+.header--about {
+  height: 90vh;
+  background-image: linear-gradient(to right bottom, rgba(229, 240, 247, 0.8), #374760), url("../img/aboutus.png");
 }
 .header__video {
   position: absolute;
@@ -1569,6 +1585,21 @@ label {
   text-transform: uppercase;
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: 75% 25%;
+}
+
+.about__join-us {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.about__join-us--photo {
+  background-image: url(../img/joinourteam.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .california__locations {
   display: flex;
   justify-content: space-evenly;
@@ -1759,7 +1790,7 @@ label {
   background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgb(255, 255, 255)), url(../img/resume.png);
 }
 .industry__mid-banner.search-jobs {
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgb(8, 17, 108)), url(../img/jobs.png);
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgb(8, 17, 108)), url(../img/search.png);
 }
 .industry__mid-banner--text-right {
   display: flex;
