@@ -16,26 +16,26 @@ function showJobFrontside(elem) {
     card.style.height = '';
 }
 
-(function($) {
-    $(document).ready(function(){
-        let $window = $(window);
-        let $mainMenuBar = $('#mainMenuBar');
-        let $mainMenuBarAnchor = $('#mainMenuBarAnchor');
+// (function($) {
+//     $(document).ready(function(){
+//         let $window = $(window);
+//         let $mainMenuBar = $('#mainMenuBar');
+//         let $mainMenuBarAnchor = $('#mainMenuBarAnchor');
 
-        $window.scroll(function() {
-            let window_top = $window.scrollTop();
-            let div_top = $mainMenuBarAnchor.offset().top;
-            if (window_top > div_top) {
-                $mainMenuBar.addClass('sticky');
-                $mainMenuBarAnchor.height($mainMenuBar.height());
-            }
-            else {
-                $mainMenuBar.removeClass('sticky');
-                $mainMenuBarAnchor.height(0);
-            }
-        })
-    })
-})(jQuery);
+//         $window.scroll(function() {
+//             let window_top = $window.scrollTop();
+//             let div_top = $mainMenuBarAnchor.offset().top;
+//             if (window_top > div_top) {
+//                 $mainMenuBar.addClass('sticky');
+//                 $mainMenuBarAnchor.height($mainMenuBar.height());
+//             }
+//             else {
+//                 $mainMenuBar.removeClass('sticky');
+//                 $mainMenuBarAnchor.height(0);
+//             }
+//         })
+//     })
+// })(jQuery);
 
 function serviceAccordion() {
     var acc = document.getElementsByClassName("accordion");
@@ -68,3 +68,18 @@ function serviceAccordion() {
   }
 
   serviceAccordion();
+
+  // function sidebarHeight() {
+  //   let mainContent = document.querySelector('.about__main-content .node__content').getBoundingClientRect();  
+  //   let mainContentHeight = mainContent.height;
+
+  //   let aboutGrid = document.getElementById('about-grid');
+  //   aboutGrid.style.gridTemplateRows = mainContentHeight + 'px';
+  //   console.log(aboutGrid.style);
+      
+  //   // let linkedin = document.querySelector('.wrappertest');
+  //   // linkedin.setAttribute('style', 'height: ' + gridheight + 'px !important');
+  //   // console.log(linkedin);
+  // }
+  
+  // sidebarHeight();
