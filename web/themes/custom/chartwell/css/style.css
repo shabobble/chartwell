@@ -1600,6 +1600,10 @@ label {
   background-repeat: no-repeat;
 }
 
+.sk-ww-linkedin-profile-post {
+  overflow: scroll !important;
+}
+
 .california__locations {
   display: flex;
   justify-content: space-evenly;
