@@ -75,10 +75,11 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'about__main-content'
   ]
 %}
 {{ attach_library('classy/node') }}
-<div class="about-grid">
+<div class="about-grid" id="about-grid">
   <article{{ attributes.addClass(classes) }}>
 
     {{ title_prefix }}
