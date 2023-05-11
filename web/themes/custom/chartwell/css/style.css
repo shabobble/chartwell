@@ -1589,6 +1589,12 @@ label {
   display: grid;
   grid-template-columns: 75% 25%;
 }
+@media (max-width: 78em) {
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .about__join-us {
   display: grid;
@@ -1600,8 +1606,13 @@ label {
   background-repeat: no-repeat;
 }
 
-.sk-ww-linkedin-profile-post {
-  overflow: scroll !important;
+.wrappertest {
+  overflow-y: scroll !important;
+}
+@media (max-width: 78em) {
+  .wrappertest {
+    height: auto !important;
+  }
 }
 
 .california__locations {
