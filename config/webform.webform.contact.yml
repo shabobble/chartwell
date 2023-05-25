@@ -306,7 +306,7 @@ handlers:
     settings:
       states:
         - completed
-      to_mail: 'contact@chartwellstaff.com, brian.gillespie@chartwellstaff.com, psullivan@nesc.com, pnoble@madisonresources.com'
+      to_mail: 'contact@chartwellstaff.com, brian.gillespie@chartwellstaff.com, psullivan@nesc.com'
       to_options: {  }
       bcc_mail: ''
       bcc_options: {  }

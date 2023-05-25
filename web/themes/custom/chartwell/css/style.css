@@ -225,6 +225,10 @@ h1 {
   color: #374760;
 }
 
+ul.pager__items {
+  font-size: 2rem;
+}
+
 .u-margin-bottom-small {
   margin-bottom: 2rem !important;
 }
