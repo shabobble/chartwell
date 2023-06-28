@@ -871,6 +871,7 @@ $databases['default']['default'] = array (
 
 $settings['config_sync_directory'] = '../config';
 $config['system.site']['uuid'] = '84890d49-f817-463b-8d48-0e3400d24d0d';
+$config['system.logging']['error_level'] = 'verbose';
 
 $settings['config_exclude_modules'] = ['seo_checklist'];
 
