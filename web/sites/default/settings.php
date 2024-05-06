@@ -814,47 +814,7 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
    include $app_root . '/' . $site_path . '/settings.local.php';
  }
 
- if ($_SERVER['SERVER_NAME'] === 'chartwell.dev.peddigital.com') {
-  $databases['default']['default'] = array (
-  'database' => 'chartwelldev',
-  /* 'database' => $_ENV['DB_DATABASE'], */
-  'username' => 'pksullivan',
-  /* 'username' => $_ENV['DB_USERNAME'], */
-  'password' => '/SA9t~+cd=/$v7`y',
-  /* 'password' => $_ENV['DB_PASSWORD'], */
-  'prefix' => '',
-  'host' => 'use1dvcmsdb.mysql.database.azure.com',
-  /* 'host' => $_ENV['DB_HOST'], */
-  'port' => '3306',
-  /* 'port' => $_ENV['DB_PORT'], */
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-
-} else if ($_SERVER['SERVER_NAME'] === 'chartwell.qa.peddigital.com') {
-  $databases['default']['default'] = array (
-  'database' => 'chartwellqa',
-  'username' => 'pksullivan',
-  'password' => 'gShJ*6Gn5!',
-  'prefix' => '',
-  'host' => 'madisonqadb.mysql.database.azure.com',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-
-} else if ($_SERVER['SERVER_NAME'] === 'chartwell.prod.peddigital.com' || $_SERVER['SERVER_NAME'] === 'chartwellstaff.com') {
-  $databases['default']['default'] = array (
-    'database' => 'chartwellprod',
-    'username' => 'pksullivan',
-    'password' => 'Ea<88;VRJE2z"Q!V',
-    'prefix' => '',
-    'host' => 'use1prcmsdb01.mysql.database.azure.com',
-    'port' => '3306',
-    'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-    'driver' => 'mysql',
-  );
-} else {
+ 
 
 $databases['default']['default'] = array (
   'database' => 'drupal9',
@@ -874,4 +834,3 @@ $config['system.site']['uuid'] = '84890d49-f817-463b-8d48-0e3400d24d0d';
 $config['system.logging']['error_level'] = 'verbose';
 
 $settings['config_exclude_modules'] = ['seo_checklist'];
-
